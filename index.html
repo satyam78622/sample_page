@@ -39,6 +39,15 @@
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
       <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" aria-describedby="password" required>
+        <small id="password" class="form-text text-muted">Password must contain a number and a special character</small>
+      </div>
+      <div class="form-group">
+        <label for="password1">Confirm Password</label>
+        <input type="password" class="form-control" id="password1" aria-describedby="password1" required>
+      </div>
+      <div class="form-group">
         <label for="college1">College Name</label>
         <input type="text" class="form-control" id="college1" required>
         <div class="valid-feedback">
@@ -64,7 +73,7 @@
           Looks good!
         </div>
       </div>
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      <button class="btn btn-primary" type="submit" onclick="return passvalidate()">Submit form</button>
 </form>
 
 </div>
@@ -115,6 +124,16 @@
           document.body.scrollTop = 0;
           document.documentElement.scrollTop = 0;
         }
+
+        function passvalidate() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("password1").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
         </script>
 
      
